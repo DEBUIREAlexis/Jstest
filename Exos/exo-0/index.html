@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h1>Exercice 0</h1>
+
+        <script type="text/javascript">
+
+        /* Section 1 */   
+
+        var name = "Joe"; //Déclaration du name et attribution de la valeur Joe
+        var city = 'London';//Idem mais avec city et valeur London
+        var age = 32;//Déclaration de l'age étant 32
+        var isRed = true;//Déclaration d'un Booléen isRed qui est true
+        var isOld = age > 80;
+//Déclaration d'un Booléen isOld dépendent si l'age est supérieur à 80 ou pas
+        var previousJobs = ['lawyer', 'developper', 'Professionnal climber'];
+//Déclaration d'un tableau composé de String
+        function info(height, weight) {//création de la fonction info ayant 2 paramètre
+            if (height > 180) {//condition si height est plus grand que 180
+                console.log('Vous êtes grand');//si la condition est true, alors on affiche la phrase
+            }//fin du if
+            if (weight < 0) {//if vérifiant si le poids est inférieur à 0
+                console.log('oups, there is a problem');//Si true, alors affiche qu'il y'a un problème
+            } else if ( weight < 15) {//sinon si le poids est inférieur à 15
+                console.log('Are you that slim ?')// affiche la phrase si true
+            } else {//sinon, ni le if ni le esls if est true donc
+                console.log('Good !')//affiche 'Good !'
+            }//fin du block if else
+        }//fin de la fonction
+
+        info(165, 45);//appelle la fonction info avec 165 et 45 en paramètre (mon poids et ma taille irl?!)
+
+        var myHeight = 175;//déclare la variable et assigne sa valeur
+        var myWeight = 86;//déclare la variable er assigne sa valeur
+
+        info(myHeight, myWeight);
+//appelle la fonction info et lui passe les variable myHeight et myWeight en paramètre
+        info(myHeight + 15, myWeight - 100);
+//appelle la fonction info et lui passe les variable myHeight +15 et myWeight-100 en paramètre
+        function toUpper(variable) {//déclaration de la fonction toUpper avec 1 variable
+            return variable.toUpperCase();//renvoi la variable en lettre capitale
+        }
+
+        var upperName = toUpper(name);
+//crée une variable upperName ayant pour valeur le return de la fonction toUpper ayant name en paramètre
+        for (i = 0; i < 3; i = i + 1) {//création d'un boucle for qui ce joue 3 fois
+            console.log(previousJobs[i]);//affiche les valeur 0,1 et 2 du tableau previousJobs
+        }
+
+        /* Section 2: */
+
+        // afficher la ville dans laquele Joe vit.     
+        console.log(city);
+        // afficher si Joe est roux ou pas.
+        console.log(isRed);
+        /* Section 3 */
+
+         console.log(myVariable);
+
+        </script>
+
+    </body>
+</html>
