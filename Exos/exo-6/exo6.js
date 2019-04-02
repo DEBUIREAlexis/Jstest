@@ -101,3 +101,12 @@ team._games.forEach(function(game){
 console.log(sumTeamPoints);
 console.log(MoyOpponentPoints);
 console.log(findTheOlder());
+
+let playerSorted=[];
+team._players.forEach(function(player){
+    playerSorted.push(player.firstName);
+});
+playerSorted.sort();
+let playerStortedFullInfo=[];
+
+console.log(playerSorted);
