@@ -11,16 +11,10 @@ secretMessage.shift();
 secretMessage.unshift('Programming');
 pos=secretMessage.indexOf('get');
 replaceByKnow(pos);
-pos=secretMessage.indexOf('right');
-replaceByKnow(pos);
-pos=secretMessage.indexOf('the');
-replaceByKnow(pos);
-pos=secretMessage.indexOf('first');
-replaceByKnow(pos);
-pos=secretMessage.indexOf('time');
-replaceByKnow(pos);
-
+secretMessage.splice(secretMessage.indexOf('right'),secretMessage.indexOf('the'),secretMessage.indexOf('first'),secretMessage.indexOf('time'));
 console.log(secretMessage.join(' '));
+
+
 function replaceByKnow(pos){
  secretMessage[pos]='know';   
 }
