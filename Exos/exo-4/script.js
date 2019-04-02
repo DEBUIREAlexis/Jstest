@@ -11,7 +11,10 @@ secretMessage.shift();
 secretMessage.unshift('Programming');
 pos=secretMessage.indexOf('get');
 replaceByKnow(pos);
-secretMessage.splice(secretMessage.indexOf('right'),secretMessage.indexOf('the'),secretMessage.indexOf('first'),secretMessage.indexOf('time'));
+secretMessage.splice(secretMessage.indexOf('right'),1);
+secretMessage.splice(secretMessage.indexOf('the'),1);
+secretMessage.splice(secretMessage.indexOf('first'),1);
+secretMessage.splice(secretMessage.indexOf('time,'),1);
 console.log(secretMessage.join(' '));
 
 
