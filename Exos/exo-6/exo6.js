@@ -20,7 +20,7 @@ joeInfo.garage=true;
 console.log(joeInfo.garage);*/
 
 let team = {
-    _players:[
+    _players: [
         {
             firstName: 'Joe',
             lastName: 'Dalton',
@@ -29,15 +29,15 @@ let team = {
         {
             firstName: 'Jack',
             lastName: 'Leventreur',
-            age:43
+            age: 43
         },
         {
             firstName: 'William',
             lastName: 'Turner',
-            age:26
+            age: 26
         }
     ],
-    _games:[
+    _games: [
         {
             opponent: 'Templars',
             teamPoints: 8,
@@ -51,7 +51,7 @@ let team = {
     ]
 }
 
-function addPlayer(first,last,age){
+function addPlayer(first, last, age) {
     team['_players'].push({
         firstName: first,
         lastName: last,
@@ -59,7 +59,7 @@ function addPlayer(first,last,age){
     });
 }
 
-function addMatch(opponent,teamPoints,opponentPoints){
+function addMatch(opponent, teamPoints, opponentPoints) {
     team['_games'].push({
         'opponent': opponent,
         'teamPoints': teamPoints,
@@ -67,13 +67,13 @@ function addMatch(opponent,teamPoints,opponentPoints){
     });
 }
 
-function findTheOlder(){
-    let ageMax=0;
+function findTheOlder() {
+    let ageMax = 0;
     let nameOlder;
-    team._players.forEach(function(player){
-        if(ageMax<player.age){
-            ageMax=player.age;
-            nameOlder=player.firstName;
+    team._players.forEach(function (player) {
+        if (ageMax < player.age) {
+            ageMax = player.age;
+            nameOlder = player.firstName;
         }
     });
     return nameOlder;
@@ -82,31 +82,41 @@ function findTheOlder(){
 
 
 console.log(team['_players']);
-addPlayer('Avrell','Harriman',65);
-addPlayer('Luke','Perry',39);
+addPlayer('Avrell', 'Harriman', 65);
+addPlayer('Luke', 'Perry', 39);
 console.log(team['_players']);
 console.log(team['_games']);
-addMatch('CrystallMetz',10,3);
-addMatch('LetZepplin',2,9);
+addMatch('CrystallMetz', 10, 3);
+addMatch('LetZepplin', 2, 9);
 console.log(team['_games']);
 
-let sumTeamPoints=0;
-let MoyOpponentPoints=0;
+let sumTeamPoints = 0;
+let MoyOpponentPoints = 0;
 
-team._games.forEach(function(game){
-    sumTeamPoints+=game.teamPoints;
-    MoyOpponentPoints+=game.opponentPoints/team._games.length;
+team._games.forEach(function (game) {
+    sumTeamPoints += game.teamPoints;
+    MoyOpponentPoints += game.opponentPoints / team._games.length;
 });
 
 console.log(sumTeamPoints);
 console.log(MoyOpponentPoints);
 console.log(findTheOlder());
 
-let playerSorted=[];
-team._players.forEach(function(player){
+let playerSorted = [];
+team._players.forEach(function (player) {
     playerSorted.push(player.firstName);
 });
 playerSorted.sort();
-let playerStortedFullInfo=[];
+var playerSortedFullInfo = [];
+
+playerSorted.forEach(function (player) {
+    team._players.forEach(function (playerfull) {
+        if (player === playerfull.firstName) {
+            playerSortedFullInfo.push(playerfull);
+        }
+    }
+    );
+});
 
 console.log(playerSorted);
+console.log(playerSortedFullInfo);
