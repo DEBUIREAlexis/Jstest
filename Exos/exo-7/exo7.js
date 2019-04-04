@@ -152,16 +152,22 @@ function search(checked){
     if(checked===true){
         jsonDatas.forEach(function(objet){
             if((objet.type===text1.value && objet.quantity>0) || (text1.value==='' &&objet.quantity>0)){
-                afficheObjet.push(objet);
-        }
-    
+                objet['items'].forEach(function(item){
+                    afficheObjet.push(item);
+                })     
+        }   
     })
         }else{
             jsonDatas.forEach(function(objet){
             if(objet.type===text1.value){
-                afficheObjet.push(objet);
+                objet['items'].forEach(function(item){
+                    afficheObjet.push(item);
+                })
         }else{
-            afficheObjet.push(objet);
+            //afficheObjet.push(objet);
+            objet['items'].forEach(function(item){
+                afficheObjet.push(item);
+            })
         }
     
     })
@@ -173,6 +179,7 @@ function search(checked){
     
     console.log(sortRedirect(afficheObjet));
 }
+
 
 function sortRedirect(objetsatrier){
    
