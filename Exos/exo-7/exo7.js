@@ -2,82 +2,83 @@ console.log("exo-7");
 
 
 
-let trad={
-    'car':'voiture',
-    'house':'maison',
-    'game':'jeux',
-    'videoGame':'jeux vidéo',
-    'show':'spectacle'};
+let trad = {
+    'car': 'voiture',
+    'house': 'maison',
+    'game': 'jeux',
+    'videoGame': 'jeux vidéo',
+    'show': 'spectacle'
+};
 
-jsonDatas.forEach(function(objet){
-    for(tradindiv in trad){
-        if(tradindiv===objet.type){
-            objet.type=trad[tradindiv];
+jsonDatas.forEach(function (objet) {
+    for (tradindiv in trad) {
+        if (tradindiv === objet.type) {
+            objet.type = trad[tradindiv];
         }
     }
 });
 
 //le formulaire
 var form = document.createElement('form');
-form.id='newform';
+form.id = 'newform';
 document.body.appendChild(form);
 
 //la textbox
 var text1 = document.createElement('input');
-text1.type='text';
-text1.id='newtext';
-text1.value='';
+text1.type = 'text';
+text1.id = 'newtext';
+text1.value = '';
 form.appendChild(text1);
 
 //le boutton
 var button = document.createElement('button');
-button.type='button';
-button.setAttribute('onclick','isChecked()');
-button.id='newbutton';
-button.value='Coucou';
+button.type = 'button';
+button.setAttribute('onclick', 'isChecked()');
+button.id = 'newbutton';
+button.value = 'Coucou';
 
-var buttontext=document.createTextNode('Hello');
+var buttontext = document.createTextNode('Hello');
 button.appendChild(buttontext);
 form.appendChild(button);
 
 //la checkbox
 var checkbox = document.createElement('input');
-checkbox.type='checkbox';
-checkbox.id='newcheckbox';
+checkbox.type = 'checkbox';
+checkbox.id = 'newcheckbox';
 form.appendChild(checkbox);
 
-function isChecked(){
-    if(checkbox.checked){
+function isChecked() {
+    if (checkbox.checked) {
         search(true)
-    }else{search(false)};
+    } else { search(false) };
 }
 
 //La liste déroulante de tri
 var liste = document.createElement('select');
-liste.id='liste';
+liste.id = 'liste';
 
 var pasTri = document.createElement('option');
-pasTri.value='';
+pasTri.value = '';
 liste.appendChild(pasTri);
 pasTri.appendChild(document.createTextNode('Pas de tri'));
 
 var triNameAsc = document.createElement('option');
-triNameAsc.value='Nom ASC';
+triNameAsc.value = 'Nom ASC';
 liste.appendChild(triNameAsc);
 triNameAsc.appendChild(document.createTextNode('Nom ASC'));
 
 var triNameDsc = document.createElement('option');
-triNameDsc.value='Nom DSC';
+triNameDsc.value = 'Nom DSC';
 liste.appendChild(triNameDsc);
 triNameDsc.appendChild(document.createTextNode('Nom DSC'));
 
 var triPriceAsc = document.createElement('option');
-triPriceAsc.value='Prix ASC';
+triPriceAsc.value = 'Prix ASC';
 liste.appendChild(triPriceAsc);
 triPriceAsc.appendChild(document.createTextNode('Prix ASC'));
 
 var triPriceDsc = document.createElement('option');
-triPriceDsc.value='Prix DSC';
+triPriceDsc.value = 'Prix DSC';
 liste.appendChild(triPriceDsc);
 triPriceDsc.appendChild(document.createTextNode('Prix DSC'));
 
@@ -89,56 +90,83 @@ document.body.appendChild(liste);
 
 
 var formCreation = document.createElement('form');
-formCreation.id='newCreation';
+formCreation.id = 'newCreation';
 document.body.appendChild(formCreation);
 
 var textName = document.createElement('input');
-textName.type='text';
-textName.id='textName';
-textName.value='';
+textName.type = 'text';
+textName.id = 'textName';
+textName.value = '';
 formCreation.appendChild(textName);
 
 var textType = document.createElement('input');
-textType.type='text';
-textType.id='textType';
-textType.value='';
+textType.type = 'text';
+textType.id = 'textType';
+textType.value = '';
 formCreation.appendChild(textType);
 
 var textDescription = document.createElement('input');
-textDescription.type='text';
-textDescription.id='textDesc';
-textDescription.value='';
+textDescription.type = 'text';
+textDescription.id = 'textDesc';
+textDescription.value = '';
 formCreation.appendChild(textDescription);
 
 var textPrice = document.createElement('input');
-textPrice.type='text';
-textPrice.id='textPrice';
-textPrice.value='';
+textPrice.type = 'text';
+textPrice.id = 'textPrice';
+textPrice.value = '';
 formCreation.appendChild(textPrice);
 
 var textQuantity = document.createElement('input');
-textQuantity.type='text';
-textQuantity.id='textQty';
-textQuantity.value='';
+textQuantity.type = 'text';
+textQuantity.id = 'textQty';
+textQuantity.value = '';
 formCreation.appendChild(textQuantity);
 
-var addButton=document.createElement('button');
-addButton.type='button';
-addButton.value='Ajouter';
-addButton.setAttribute('onclick','addAnArticle()');
+var textFirstName = document.createElement('input');
+textFirstName.type = 'text';
+textFirstName.id = 'textFirst';
+textFirstName.value = '';
+formCreation.appendChild(textFirstName);
+
+var textAddress = document.createElement('input');
+textAddress.type = 'text';
+textAddress.id = 'textAddress';
+textAddress.value = '';
+formCreation.appendChild(textAddress);
+
+var textTextLast = document.createElement('input');
+textTextLast.type = 'text';
+textTextLast.id = 'textLast';
+textTextLast.value = '';
+formCreation.appendChild(textTextLast);
+
+var addButton = document.createElement('button');
+addButton.type = 'button';
+addButton.value = 'Ajouter';
+addButton.setAttribute('onclick', 'addAnArticle()');
 addButton.appendChild(document.createTextNode('Ajouter'));
 formCreation.appendChild(addButton);
 
 
 document.body.appendChild(formCreation);
 
-function addAnArticle(){
-    objToAdd={
-        'name': textName.value,
+function addAnArticle() {
+    objToAdd = {
         'type': textType.value,
-        'description': textDescription.value,
-        'price': textPrice.value,
-        'quantity': textQuantity.value
+        'items': [
+            {
+                'name': textName.value,
+                'description': textDescription.value,
+                'price': textPrice.value,
+                'quantity': textQuantity.value,
+                'contact': {
+                    'lastname': textLast.value,
+                    'firstname': textFirst.value,
+                    'address': textAddress.value
+                }
+            }
+        ]
     }
     console.log(objToAdd);
     jsonDatas.push(objToAdd);
@@ -147,69 +175,96 @@ function addAnArticle(){
 
 /////////////////////////////////////////
 
-function search(checked){
-    let afficheObjet=[];
-    if(checked===true){
-        jsonDatas.forEach(function(objet){
-            if((objet.type===text1.value && objet.quantity>0) || (text1.value==='' &&objet.quantity>0)){
-                objet['items'].forEach(function(item){
-                    afficheObjet.push(item);
-                })     
-        }   
-    })
-        }else{
-            jsonDatas.forEach(function(objet){
-            if(objet.type===text1.value){
-                objet['items'].forEach(function(item){
-                    afficheObjet.push(item);
+function search(checked) {
+    let afficheObjet = [];
+
+
+    if (checked === true) {
+        jsonDatas.forEach(function (objet) {
+            if ((objet.type === text1.value ) || (text1.value === '')) {
+                objet['items'].forEach(function (item) {
+                    if(item.quantity>0){
+                        let temporaire=[objet.type];
+                        temporaire.push(item.name);
+                        temporaire.push(item.description);
+                        temporaire.push(item.price);
+                        temporaire.push(item.quantity);
+                                            
+                    afficheObjet.push(temporaire);
+                    }
                 })
-        }else{
-            //afficheObjet.push(objet);
-            objet['items'].forEach(function(item){
-                afficheObjet.push(item);
+            }
+        })
+    } else if(text1.value!='') {
+        jsonDatas.forEach(function (objet) {
+            if (objet.type === text1.value) {
+                    objet['items'].forEach(function (item) {
+                            let temporaire=[objet.type];
+                            temporaire.push(item.name);
+                            temporaire.push(item.description);
+                            temporaire.push(item.price);
+                            temporaire.push(item.quantity);
+                                                
+                        afficheObjet.push(temporaire);
+                        }
+                    )
+            } /*else {
+                //afficheObjet.push(objet);
+                    afficheObjet.push(objet.items);
+
+            }*/
+
+        })
+    }else{
+        jsonDatas.forEach(function (objet) {
+            objet['items'].forEach(function (item) {
+                let temporaire=[objet.type];
+                temporaire.push(item.name);
+                temporaire.push(item.description);
+                temporaire.push(item.price);
+                temporaire.push(item.quantity);
+                                    
+            afficheObjet.push(temporaire);
             })
-        }
-    
-    })
-}
+        })
+    }
     console.clear();
     console.log(afficheObjet);
-    
 
-    
+
+
     console.log(sortRedirect(afficheObjet));
 }
 
 
-function sortRedirect(objetsatrier){
-   
-    switch (liste.value){
+function sortRedirect(objetsatrier) {
+    switch (liste.value) {
         case 'Nom ASC':
-        console.log('Nomasc');
-        return sortBy(objetsatrier,'name','asc');
-        break;
+            console.log('Nomasc');
+            return sortBy(objetsatrier, 'item.name', 'asc');
+            break;
         case 'Nom DSC':
-        console.log('Nomdsc');
-        return sortBy(objetsatrier,'name','dsc');
-        break;
+            console.log('Nomdsc');
+            return sortBy(objetsatrier, 'items.name', 'dsc');
+            break;
         case 'Prix ASC':
-        console.log('Prixasc');
-        return sortBy(objetsatrier,'price','asc');
-        break;
+            console.log('Prixasc');
+            return sortBy(objetsatrier, 'price', 'asc');
+            break;
         case 'Prix DSC':
-        console.log('Prixdsc');
-        return sortBy(objetsatrier,'price','dsc');
-        break;
+            console.log('Prixdsc');
+            return sortBy(objetsatrier, 'price', 'dsc');
+            break;
         default:
-        console.log('rien');
+            console.log('rien');
     }
 }
 
-function sortBy(objetToSort,parameter,type){
-    if(type==='asc'){
-    objetToSort.sort((a,b)=>(a[parameter]>b[parameter]) ? 1 :-1);
-    }else{
-        objetToSort.sort((a,b)=>(a[parameter]<b[parameter]) ? 1 :-1);
+function sortBy(objetToSort, parameter, type) {
+    if (type === 'asc') {
+        objetToSort.sort((a, b) => (a[parameter] > b[parameter]) ? 1 : -1);
+    } else {
+        objetToSort.sort((a, b) => (a[parameter] < b[parameter]) ? 1 : -1);
     }
     return objetToSort;
 }
