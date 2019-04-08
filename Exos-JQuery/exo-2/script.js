@@ -8,5 +8,5 @@ console.log('exercice 2');
 	6. Sélectionner tous les labels verts.  $(".label-success")
 	7. Sélectionner tous les paragraphes qui ont comme classe 'intro'. $("p.intro")
 	8. Sélectionner toutes les images avec toutes les icones dont la classe est 'glyphicon-time' $("img.glyphicon-time")
-	9. Sélectionner le premier élément du sidemenu. $(".sidenav").first()
-	10. Bonus : sélectionner un paragraphe sur deux.  */
+	9. Sélectionner le premier élément du sidemenu. $(".sidenav").first()  ou $(".sidenav":first)
+		10. Bonus : sélectionner un paragraphe sur deux.  */
