@@ -18,19 +18,19 @@ $('.panel-body').on('click',()=>{
     $('.navbar-nav li a').last().html("<span class='glyphicon glyphicon-shopping-cart'></span>Cart "+panier);
 })
 
-$('.panel-primary img').on('mouseover',()=>{
+$('.panel-primary img').on('mouseover',function(){
     console.clear();
-    console.log("L'utilisateur regarde: Ipads");
+    console.log("L'utilisateur regarde: "+$(this).parent().parent().children().last().text().split(" ").pop());
 })
 
-$('.panel-danger img').on('mouseover',()=>{
+$('.panel-danger img').on('mouseover',function(){
     console.clear();
-    console.log("L'utilisateur regarde: Computers");
+    console.log("L'utilisateur regarde: "+$(this).parent().parent().children().last().text().split(" ").pop());
 })
 
-$('.panel-success img').on('mouseover',()=>{
+$('.panel-success img').on('mouseover',function(){
     console.clear();
-    console.log("L'utilisateur regarde: Mobiles");
+    console.log("L'utilisateur regarde: "+$(this).parent().parent().children().last().text().split(" ").pop());
 })
 
 
